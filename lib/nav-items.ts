@@ -1,4 +1,4 @@
-import { House, Inbox, ReceiptText, SettingsIcon } from "lucide-react";
+import { House, Inbox, Receipt, SettingsIcon } from "lucide-react";
 
 export const navItems = [
   {
@@ -9,7 +9,7 @@ export const navItems = [
   },
   {
     title: "Estimates",
-    icon: ReceiptText,
+    icon: Receipt,
     href: "/estimates",
     acceptedRoles: ["ADMIN"],
   },
@@ -22,7 +22,7 @@ export const navItems = [
   {
     title: "Settings",
     icon: SettingsIcon,
-    href: "/organization/settings",
+    href: "/settings",
     acceptedRoles: ["ADMIN", "MEMBER"],
   },
 ];

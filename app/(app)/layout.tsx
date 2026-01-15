@@ -16,7 +16,7 @@ export default async function OrgAppLayout({
   }
 
   return (
-    <div className="w-full bg-secondary font-sans">
+    <div className="w-full font-sans">
       <div className="w-full h-full">
         <Header />
 
@@ -25,7 +25,6 @@ export default async function OrgAppLayout({
             <SidebarProvider>
               <AppSidebar />
 
-              {/* <SidebarTrigger className="hidden md:flex" /> */}
               {children}
             </SidebarProvider>
           </div>

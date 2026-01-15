@@ -7,6 +7,7 @@ import {
   DropdownMenuLabel,
 } from "./ui/dropdown-menu";
 import EmptyNotifications from "./empty-notifications";
+import Link from "next/link";
 
 type NotificationItem = {
   title: string;
@@ -27,8 +28,8 @@ export function Notification() {
   const hasNotifications = notifications && notifications.length > 0;
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="relative cursor-pointer outline-none">
+    <Link href={"/notifications"}>
+      <div className="relative">
         {hasNotifications ? (
           <div className="absolute z-20 right-0 top-0">
             <div className="relative size-1.5 rounded-full flex items-center justify-center bg-notification" />
@@ -43,39 +44,7 @@ export function Notification() {
             strokeWidth={2.5}
           />
         </div>
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent
-        align="end"
-        sideOffset={12}
-        className="w-[280px] md:w-96 p-2"
-      >
-        {hasNotifications ? (
-          <>
-            <DropdownMenuLabel className="text-medium text-muted-foreground">
-              Notificações
-            </DropdownMenuLabel>
-            {notifications.map((item, index) => (
-              <DropdownMenuItem
-                key={index}
-                className="flex flex-col items-start gap-1 p-3 cursor-pointer"
-              >
-                <div className="flex w-full justify-between items-center">
-                  <span className="font-semibold text-sm">{item.title}</span>
-                  <span className="text-xs text-muted-foreground">
-                    {item.date}
-                  </span>
-                </div>
-                <p className="text-xs text-muted-foreground line-clamp-2">
-                  {item.content}
-                </p>
-              </DropdownMenuItem>
-            ))}
-          </>
-        ) : (
-          <EmptyNotifications />
-        )}
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </div>
+    </Link>
   );
 }

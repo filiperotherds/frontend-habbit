@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import MobileNavbar from "@/components/mobile-navbar";
 
 export const metadata: Metadata = {
-  title: "Panorama | Contractors",
+  title: "Rabbit | Contractors",
 };
 
 export default async function OrgAppLayout({
